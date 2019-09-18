@@ -1,4 +1,6 @@
 import math, datetime, re, os
+from random import *
+
 nCols = 5
 nRows = 5
 grid = []
@@ -174,14 +176,31 @@ class Cell():
                 # self.g = 0    
                 # self.b = 0        
                 
+                # self.r = cellPositions['colorPositionX'] * random()
+                # self.g = cellPositions['colorFromHypotenuse'] * random()
+                # self.b = cellPositions['colorPositionY'] * random()
+                
                 self.r = cellPositions['colorPositionY']
                 
                 # self.r = 255
                 # self.g = 255  
-                self.b = 255
+                # self.b = 255
                 
                 # self.r = cellPositions['colorFromHypotenuse']
-                self.g = cellPositions['colorFromHypotenuse']
+                # self.g = cellPositions['colorFromHypotenuse']
+                
+                randNumX = random()
+                randNumY = random()
+                
+                self.x = randNumX * (self.x + randNumX)
+                self.y = randNumY * (self.y + randNumY)
+                # self.x = mouseX * (self.x + randNumX)
+                # self.y = mouseY * (self.y + randNumY)
+                
+                # self.x = randNumX * (cellPositions['colorFromHypotenuse'] + randNumX)
+                # self.y = randNumY * (cellPositions['colorFromHypotenuse'] + randNumY)
+                # self.w = randNumX * (cellPositions['colorFromHypotenuse'] + randNumX)
+                # self.h = randNumX * (cellPositions['colorFromHypotenuse'] + randNumX)
                 # self.b = cellPositions['colorFromHypotenuse']    
             # elif keyCode == 's' or keyCode == 'S':
             #     time = datetime.datetime.now()
